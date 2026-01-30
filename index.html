@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sharon Mwaka | IGS Caspone Portfolio</title>
+  <style>
+    :root {
+      --primary: #1e40af;
+      --secondary: #0ea5e9;
+      --accent: #f59e0b;
+      --bg: #f8fafc;
+      --card: #ffffff;
+      --text: #0f172a;
+      --muted: #64748b;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', Tahoma, sans-serif;
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.7;
+    }
+
+    header {
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
+      color: #fff;
+      padding: 4rem 1.5rem;
+      text-align: center;
+    }
+
+    header h1 {
+      font-size: 2.8rem;
+      margin-bottom: .6rem;
+    }
+
+    header p {
+      max-width: 780px;
+      margin: auto;
+      font-size: 1.15rem;
+      opacity: .95;
+    }
+
+    nav {
+      background: #fff;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, .08);
+    }
+
+    nav ul {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      list-style: none;
+      padding: 1rem;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: var(--primary);
+      font-weight: 600;
+    }
+
+    nav a:hover {
+      color: var(--accent);
+    }
+
+    section {
+      padding: 4rem 1.5rem;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    section h2 {
+      font-size: 2.2rem;
+      margin-bottom: 1.2rem;
+      color: var(--primary);
+    }
+
+    section p {
+      max-width: 900px;
+      color: var(--muted);
+    }
+
+    .hero-tech {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1.5rem;
+      margin-top: 2.5rem;
+    }
+
+    .hero-tech img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 18px;
+      box-shadow: 0 12px 28px rgba(0, 0, 0, .15);
+    }
+
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+
+    .card {
+      background: var(--card);
+      padding: 2rem;
+      border-radius: 18px;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, .1);
+      transition: transform .25s ease, box-shadow .25s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 18px 40px rgba(0, 0, 0, .18);
+    }
+
+    .card img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+      border-radius: 14px;
+      margin-bottom: 1rem;
+    }
+
+    .tag {
+      display: inline-block;
+      background: var(--accent);
+      color: #fff;
+      padding: .35rem .9rem;
+      border-radius: 999px;
+      font-size: .8rem;
+      margin-bottom: .7rem;
+    }
+
+    .btn {
+      display: inline-block;
+      margin-top: 1rem;
+      padding: .65rem 1.4rem;
+      background: var(--primary);
+      color: #fff;
+      text-decoration: none;
+      border-radius: 999px;
+      font-weight: 600;
+      border: none;
+      cursor: pointer;
+      font-size: 1rem;
+    }
+
+    .btn:hover {
+      background: #172554;
+    }
+
+    .btn-small {
+      display: block;
+      margin: 0.5rem 0;
+      padding: 0.5rem 1rem;
+      background: #e5e7eb;
+      color: var(--text);
+      text-decoration: none;
+      border-radius: 8px;
+      font-size: 0.9rem;
+      text-align: center;
+      border: 1px solid #d1d5db;
+    }
+
+    .btn-small:hover {
+      background: var(--primary);
+      color: white;
+    }
+
+    .file-list {
+      margin-top: 1rem;
+      padding-top: 1rem;
+      border-top: 1px solid #e5e7eb;
+      display: none;
+    }
+
+    .file-list.show {
+      display: block;
+    }
+
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 1.8rem;
+      margin-top: 2rem;
+    }
+
+    .skill-box {
+      background: var(--card);
+      padding: 1.8rem;
+      border-radius: 18px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, .1);
+    }
+
+    footer {
+      background: #020617;
+      color: #e5e7eb;
+      text-align: center;
+      padding: 2.5rem 1rem;
+    }
+
+    footer a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <h1>Sharon Mwaka</h1>
+    <p>Information Technology Student | IGS Caspone Communication Skills Portfolio<br>
+      Demonstrating academic work, digital skills & modern web presence</p>
+  </header>
+
+  <nav>
+    <ul>
+      <li><a href="#about">About</a></li>
+      <li><a href="#items">Project</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <section id="about">
+    <h2>About This Portfolio</h2>
+    <p>
+      This single-page website is my official <strong>IGS Caspone Communication Skills portfolio</strong>.
+      It provides structured evidence of my academic tasks, online professional presence, and technical abilities.
+      The portfolio is hosted on <strong>GitHub Pages</strong>, demonstrating practical application of modern web
+      technologies.
+    </p>
+
+    <div class="hero-tech">
+      <img
+        src="https://images.unsplash.com/photo-1499750310107-5fef28a66643?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80"
+        alt="Technology workspace">
+      <img
+        src="https://images.unsplash.com/photo-1450101499163-c8848c66ca85?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80"
+        alt="Coding environment">
+      <img
+        src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1115&q=80"
+        alt="Web development">
+    </div>
+  </section>
+
+  <section id="items">
+    <h2>Project Items</h2>
+    <div class="card-grid">
+
+      <div class="card">
+        <img
+          src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1011&q=80"
+          alt="Documentation">
+        <span class="tag">Item 1</span>
+        <h3>Abstract & Documentation</h3>
+        <p>Written abstract and PDF documentation prepared to meet academic communication standards.</p>
+
+        <button class="btn" onclick="toggleList('pdf-list')">Open PDFs</button>
+
+        <div id="pdf-list" class="file-list">
+          <a href="documents/digital_gap_giriama.pdf" class="btn-small">Digital Gap (Giriama)</a>
+          <a href="documents/digital_gap_swahili.pdf" class="btn-small">Digital Gap (Swahili)</a>
+          <a href="documents/digital_gap.pdf" class="btn-small">Digital Gap</a>
+          <a href="documents/gender.pdf" class="btn-small">Gender</a>
+          <a href="documents/gender_swahili.pdf" class="btn-small">Gender (Swahili)</a>
+          <a href="documents/gender_giriama.pdf" class="btn-small">Gender (Giriama)</a>
+          <a href="documents/mpesa_giriama.pdf" class="btn-small">M-Pesa (Giriama)</a>
+          <a href="documents/mpesa_swahili.pdf" class="btn-small">M-Pesa (Swahili)</a>
+          <a href="documents/mpesa.pdf" class="btn-small">M-Pesa</a>
+          <a href="documents/resume.pdf" class="btn-small">Resume</a>
+          <a href="documents/resume_giriama.pdf" class="btn-small">Resume (Giriama)</a>
+          <a href="documents/resume_swahili.pdf" class="btn-small">Resume (Swahili)</a>
+          <a href="documents/autobiography.pdf" class="btn-small">Autobiography</a>
+          <a href="documents/photoghraphic_essay.pdf" class="btn-small">Photographic Essay</a>
+          <a href="documents/online_platforms.pdf" class="btn-small">Photographic Essay</a>
+
+        </div>
+      </div>
+
+      <div class="card">
+        <img
+          src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80"
+          alt="Presentation slides">
+        <span class="tag">Item 2</span>
+        <h3>PowerPoint Presentation</h3>
+        <p>Professionally designed slides summarizing the project concepts and findings.</p>
+
+        <button class="btn" onclick="toggleList('ppt-list')">Open Slides</button>
+
+        <div id="ppt-list" class="file-list">
+          <a href="presentations/autobiography_presentation.pptx" class="btn-small">Autobiography Presentation</a>
+          <a href="presentations/computational_fractals.pptx" class="btn-small">Computational Fractals</a>
+          <a href="presentations/mobile_money_presentation.pptx" class="btn-small">Mobile Money Presentation</a>
+        </div>
+      </div>
+
+      <div class="card">
+        <img
+          src="https://images.unsplash.com/photo-1555949963-aa79dcee981c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80"
+          alt="Video recording">
+        <span class="tag">Item 3</span>
+        <h3>Video Presentation</h3>
+        <p>Recorded video presentation with face and voice explaining the abstract clearly.</p>
+
+        <button class="btn" onclick="toggleList('video-list')">Watch Videos</button>
+
+        <div id="video-list" class="file-list">
+          <a href="https://drive.google.com/file/d/1ggm4w-E2wdJmAvm5MToJF8KDABa7kvlb/view" class="btn" target="_blank">
+            recording1
+          </a>
+
+          <a href="https://drive.google.com/file/d/15fm35LuqSg3d5Yw5Ejo53pOnILi_SrJi/view" class="btn" target="_blank">
+            Watch recording2
+          </a>
+
+          <a href="https://drive.google.com/file/d/1bKZytNCbAFfDFsyLRJurP2PdD6FFP-7u/view" class="btn" target="_blank">
+            Watch M-Pesa Video
+          </a>
+
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <section id="skills">
+    <h2>Skills & Online Presence</h2>
+    <div class="skills-grid">
+      <div class="skill-box">
+        <h3>Communication Skills</h3>
+        <p>Academic writing, oral presentations, digital and professional communication.</p>
+      </div>
+      <div class="skill-box">
+        <h3>Online Platforms</h3>
+        <p>WhatsApp Business, LinkedIn, simulated blog & social media platforms for academic evidence.</p>
+      </div>
+      <div class="skill-box">
+        <h3>Technical Skills</h3>
+        <p>HTML, CSS, GitHub Pages, portfolio hosting, basic UI/UX design.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <h2>Contact Information</h2>
+    <p>
+      <strong>Email:</strong> sharonmwaka254@gmail.com<br>
+      <strong>Phone:</strong> 0712289633<br>
+      <strong>GitHub:</strong> <a href="https://sharon098-7.github.io/" target="_blank">github.com/your-username</a>
+    </p>
+  </section>
+
+  <footer>
+    <p>© 2026 Sharon Mwaka | IGS Caspone Portfolio<br>
+      Hosted on <a href="https://pages.github.com/" target="_blank">GitHub Pages</a></p>
+  </footer>
+
+  <script>
+    function toggleList(id) {
+      const list = document.getElementById(id);
+      list.classList.toggle('show');
+
+
+      const button = list.previousElementSibling;
+      if (list.classList.contains('show')) {
+        button.textContent = button.textContent.includes('Open') ? 'Close PDFs' :
+          button.textContent.includes('Slides') ? 'Close Slides' : 'Close Videos';
+      } else {
+        button.textContent = button.textContent.includes('Close PDFs') ? 'Open PDFs' :
+          button.textContent.includes('Close Slides') ? 'Open Slides' : 'Watch Videos';
+      }
+    }
+  </script>
+
+</body>
+
+</html>
