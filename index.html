@@ -216,6 +216,14 @@
       color: var(--accent);
       text-decoration: none;
     }
+
+    /* CSS Adjustments for organized file lists */
+    .file-list h4 {
+      margin-top: 1rem;
+      margin-bottom: 0.5rem;
+      color: var(--primary);
+      font-size: 1.1rem;
+    }
   </style>
 </head>
 
@@ -273,22 +281,35 @@
         <button class="btn" onclick="toggleList('pdf-list')">Open PDFs</button>
 
         <div id="pdf-list" class="file-list">
-          <a href="documents/digital_gap_giriama.pdf" class="btn-small">Digital Gap (Giriama)</a>
+          <!-- Resume Section -->
+          <h4>Resume</h4>
+          <a href="documents/resume.pdf" class="btn-small">Resume (English)</a>
+          <a href="documents/resume_swahili.pdf" class="btn-small">Resume (Swahili)</a>
+          <a href="documents/resume_giriama.pdf" class="btn-small">Resume (Giriama)</a>
+          
+          <!-- Digital Gap Section -->
+          <h4>challenges in modern society</h4>
+          <a href="documents/digital_gap.pdf" class="btn-small">Digital Gap (English)</a>
           <a href="documents/digital_gap_swahili.pdf" class="btn-small">Digital Gap (Swahili)</a>
-          <a href="documents/digital_gap.pdf" class="btn-small">Digital Gap</a>
-          <a href="documents/gender.pdf" class="btn-small">Gender</a>
+          <a href="documents/digital_gap_giriama.pdf" class="btn-small">Digital Gap (Giriama)</a>
+          
+          <!-- Gender Section -->
+          <h4>gender awerenes</h4>
+          <a href="documents/gender.pdf" class="btn-small">Gender (English)</a>
           <a href="documents/gender_swahili.pdf" class="btn-small">Gender (Swahili)</a>
           <a href="documents/gender_giriama.pdf" class="btn-small">Gender (Giriama)</a>
-          <a href="documents/mpesa_giriama.pdf" class="btn-small">M-Pesa (Giriama)</a>
+          
+          <!-- M-Pesa Section -->
+          <h4>Innovation and invention</h4>
+          <a href="documents/mpesa.pdf" class="btn-small">M-Pesa (English)</a>
           <a href="documents/mpesa_swahili.pdf" class="btn-small">M-Pesa (Swahili)</a>
-          <a href="documents/mpesa.pdf" class="btn-small">M-Pesa</a>
-          <a href="documents/resume.pdf" class="btn-small">Resume</a>
-          <a href="documents/resume_giriama.pdf" class="btn-small">Resume (Giriama)</a>
-          <a href="documents/resume_swahili.pdf" class="btn-small">Resume (Swahili)</a>
+          <a href="documents/mpesa_giriama.pdf" class="btn-small">M-Pesa (Giriama)</a>
+
+          <!-- Other PDFs -->
+          <h4>Other Documents</h4>
           <a href="documents/autobiography.pdf" class="btn-small">Autobiography</a>
           <a href="documents/photoghraphic_essay.pdf" class="btn-small">Photographic Essay</a>
-          <a href="documents/online_platforms.pdf" class="btn-small">Photographic Essay</a>
-
+          <a href="documents/online_platforms.pdf" class="btn-small">Online Platforms</a>
         </div>
       </div>
 
@@ -303,9 +324,14 @@
         <button class="btn" onclick="toggleList('ppt-list')">Open Slides</button>
 
         <div id="ppt-list" class="file-list">
-          <a href="presentations/autobiography_presentation.pptx" class="btn-small">Autobiography Presentation</a>
+          <h4>autobiograpy</h4>
+          <a href="presentations/autobiography_presentation.pptx" class="btn-small">Autobiography</a>
+          
+          <h4>culture demostration in IT</h4>
           <a href="presentations/computational_fractals.pptx" class="btn-small">Computational Fractals</a>
-          <a href="presentations/mobile_money_presentation.pptx" class="btn-small">Mobile Money Presentation</a>
+          
+          <h4>innovation and invention</h4>
+          <a href="presentations/mobile_money_presentation.pptx" class="btn-small">Mobile Money</a>
         </div>
       </div>
 
@@ -320,19 +346,17 @@
         <button class="btn" onclick="toggleList('video-list')">Watch Videos</button>
 
         <div id="video-list" class="file-list">
+          <h4>Recordings</h4>
           <a href="https://drive.google.com/file/d/1ggm4w-E2wdJmAvm5MToJF8KDABa7kvlb/view" class="btn" target="_blank">
-            recording1
+            challenges in modern society
           </a>
-
           <a href="https://drive.google.com/file/d/15fm35LuqSg3d5Yw5Ejo53pOnILi_SrJi/view" class="btn" target="_blank">
-            Watch recording2
+            innovation and invention
           </a>
-
           <a href="https://drive.google.com/file/d/1bKZytNCbAFfDFsyLRJurP2PdD6FFP-7u/view" class="btn" target="_blank">
-            Watch M-Pesa Video
+           gender awerenes
           </a>
-
-        </div>
+          </div>
       </div>
 
     </div>
@@ -347,7 +371,7 @@
       </div>
       <div class="skill-box">
         <h3>Online Platforms</h3>
-        <p>WhatsApp Business, LinkedIn, simulated blog & social media platforms for academic evidence.</p>
+        <p>WhatsApp Business, LinkedIn, Instagram, Facebook social media platforms for academic evidence.</p>
       </div>
       <div class="skill-box">
         <h3>Technical Skills</h3>
@@ -361,7 +385,7 @@
     <p>
       <strong>Email:</strong> sharonmwaka254@gmail.com<br>
       <strong>Phone:</strong> 0712289633<br>
-      <strong>GitHub:</strong> <a href="https://sharon098-7.github.io/" target="_blank">github.com/your-username</a>
+      <strong>GitHub:</strong> <a href="https://github.com/Sharon098-7/sharonmwaka.github.io" target="_blank">github.com/Sharon098-7</a>
     </p>
   </section>
 
@@ -374,7 +398,6 @@
     function toggleList(id) {
       const list = document.getElementById(id);
       list.classList.toggle('show');
-
 
       const button = list.previousElementSibling;
       if (list.classList.contains('show')) {
